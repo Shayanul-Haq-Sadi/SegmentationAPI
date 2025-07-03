@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2199E92A80F9EBEB86B210C8 /* Pods_SegmentationAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99AE0CE259173C5F1EEF022E /* Pods_SegmentationAPI.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		3F7558F0B72DDD744B6A2933 /* Pods-SegmentationAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegmentationAPI.release.xcconfig"; path = "Target Support Files/Pods-SegmentationAPI/Pods-SegmentationAPI.release.xcconfig"; sourceTree = "<group>"; };
+		99AE0CE259173C5F1EEF022E /* Pods_SegmentationAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SegmentationAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B625A615C76604FB3B629350 /* Pods-SegmentationAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegmentationAPI.debug.xcconfig"; path = "Target Support Files/Pods-SegmentationAPI/Pods-SegmentationAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		CF7170352E163C0600F9C48D /* SegmentationAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SegmentationAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2199E92A80F9EBEB86B210C8 /* Pods_SegmentationAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55CC7BEDED25EF3AA32FD2F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99AE0CE259173C5F1EEF022E /* Pods_SegmentationAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6824660FA3F22311CBE9186E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B625A615C76604FB3B629350 /* Pods-SegmentationAPI.debug.xcconfig */,
+				3F7558F0B72DDD744B6A2933 /* Pods-SegmentationAPI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CF71702C2E163C0600F9C48D = {
 			isa = PBXGroup;
 			children = (
 				CF7170372E163C0600F9C48D /* SegmentationAPI */,
 				CF7170362E163C0600F9C48D /* Products */,
+				6824660FA3F22311CBE9186E /* Pods */,
+				55CC7BEDED25EF3AA32FD2F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7170482E163C0700F9C48D /* Build configuration list for PBXNativeTarget "SegmentationAPI" */;
 			buildPhases = (
+				2D0852C52A9E6FC74EF6B6FD /* [CP] Check Pods Manifest.lock */,
 				CF7170312E163C0600F9C48D /* Sources */,
 				CF7170322E163C0600F9C48D /* Frameworks */,
 				CF7170332E163C0600F9C48D /* Resources */,
+				0DF9D0DC960BAC41F345C0F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				CF7170372E163C0600F9C48D /* SegmentationAPI */,
 			);
 			name = SegmentationAPI;
-			packageProductDependencies = (
-			);
 			productName = SegmentationAPI;
 			productReference = CF7170352E163C0600F9C48D /* SegmentationAPI.app */;
 			productType = "com.apple.product-type.application";
@@ -95,6 +122,7 @@
 				TargetAttributes = {
 					CF7170342E163C0600F9C48D = {
 						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
 					};
 				};
 			};
@@ -127,6 +155,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DF9D0DC960BAC41F345C0F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SegmentationAPI/Pods-SegmentationAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SegmentationAPI/Pods-SegmentationAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SegmentationAPI/Pods-SegmentationAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D0852C52A9E6FC74EF6B6FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SegmentationAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF7170312E163C0600F9C48D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,19 +214,24 @@
 /* Begin XCBuildConfiguration section */
 		CF7170492E163C0700F9C48D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B625A615C76604FB3B629350 /* Pods-SegmentationAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q32KJPWT56;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SegmentationAPI/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your gallery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -161,6 +240,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dey.SegmentationAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SegmentationAPI/SegmentationAPI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -168,19 +249,24 @@
 		};
 		CF71704A2E163C0700F9C48D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F7558F0B72DDD744B6A2933 /* Pods-SegmentationAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q32KJPWT56;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SegmentationAPI/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your gallery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -189,6 +275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dey.SegmentationAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SegmentationAPI/SegmentationAPI-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

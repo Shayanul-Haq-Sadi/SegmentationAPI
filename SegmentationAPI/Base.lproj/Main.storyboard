@@ -1,24 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GPK-OG-Ge5">
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Segmentaion API-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SegmentViewController" id="BYZ-38-t0r" customClass="SegmentViewController" customModule="SegmentationAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rTF-um-IhM">
+                                <rect key="frame" x="0.0" y="132" width="414" height="517.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rTF-um-IhM" secondAttribute="height" multiplier="4:5" id="irA-bC-bJW"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H3n-ja-UNl">
+                                <rect key="frame" x="20" y="669.66666666666663" width="374" height="109"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EO8-sH-RcB">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segmented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kno-3s-ugv">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MB-Oz-Q3D">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="segmentedSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="00p-RO-sw4"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LL1-Hj-nHg">
+                                        <rect key="frame" x="0.0" y="39" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnF-BY-rNO">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tdj-Qt-2bZ">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="maskSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="ojP-aI-BTL"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iWg-vD-cEv">
+                                        <rect key="frame" x="0.0" y="78" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Path" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="US9-Cl-k91">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Od-c9-94S">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="pathSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="y6Q-RE-4Pn"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj0-v5-Ue8">
+                                <rect key="frame" x="16" y="798.66666666666663" width="382" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Save"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SjH-Ze-fAI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rTF-um-IhM" secondAttribute="trailing" id="6NG-UE-3TO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oj0-v5-Ue8" secondAttribute="trailing" constant="16" id="IaC-NU-YvX"/>
+                            <constraint firstItem="rTF-um-IhM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yc1-4y-ABH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H3n-ja-UNl" secondAttribute="trailing" constant="20" id="Zrg-kX-GWX"/>
+                            <constraint firstItem="rTF-um-IhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aOG-ct-N83"/>
+                            <constraint firstItem="Oj0-v5-Ue8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ax3-BN-igj"/>
+                            <constraint firstItem="H3n-ja-UNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hMo-rv-NeB"/>
+                            <constraint firstItem="Oj0-v5-Ue8" firstAttribute="top" secondItem="H3n-ja-UNl" secondAttribute="bottom" constant="20" id="nnS-cu-mUy"/>
+                            <constraint firstItem="H3n-ja-UNl" firstAttribute="top" secondItem="rTF-um-IhM" secondAttribute="bottom" constant="20" id="t6b-D6-hBc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Segmentaion API" id="3s9-3d-ZZ1"/>
+                    <connections>
+                        <outlet property="imageView" destination="rTF-um-IhM" id="acC-tw-JVe"/>
+                        <outlet property="maskSwitch" destination="Tdj-Qt-2bZ" id="fXb-Lu-R6R"/>
+                        <outlet property="pathSwitch" destination="8Od-c9-94S" id="vEG-CN-B4Z"/>
+                        <outlet property="segmentedSwitch" destination="3MB-Oz-Q3D" id="guD-RZ-29k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="434" y="-23"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3j1-uk-MWM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TP8-Fu-gSx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BNJ-6w-epf">
+                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pvQ-Zy-fBF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="knn-Vn-qBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="-1095"/>
+        </scene>
+        <!--Segmentaion API-->
+        <scene sceneID="adD-Cg-qB8">
+            <objects>
+                <viewController storyboardIdentifier="ImagePickerViewController" id="T2T-HH-JBj" customClass="ImagePickerViewController" customModule="SegmentationAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cZI-29-tLj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unsplashPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="T8Y-vn-P3T">
+                                <rect key="frame" x="20" y="152" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T8Y-vn-P3T" secondAttribute="height" multiplier="1:1" id="7YO-nW-f37"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-dV-Mhb">
+                                <rect key="frame" x="160" y="556" width="94.333333333333314" height="94.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDv-9n-fqX">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Picker"/>
+                                        <connections>
+                                            <action selector="imagePickerPressed:" destination="T2T-HH-JBj" eventType="touchUpInside" id="3od-YR-fAN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjP-qj-khG">
+                                        <rect key="frame" x="0.0" y="60.333333333333371" width="94.333333333333329" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Generate"/>
+                                        <connections>
+                                            <action selector="imageGeneratePressed:" destination="T2T-HH-JBj" eventType="touchUpInside" id="EoK-Eu-Arz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="94S-7n-XaS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ifq-dV-Mhb" firstAttribute="centerX" secondItem="cZI-29-tLj" secondAttribute="centerX" id="7Op-ep-sjf"/>
+                            <constraint firstItem="T8Y-vn-P3T" firstAttribute="top" secondItem="94S-7n-XaS" secondAttribute="top" constant="20" id="GPg-cR-kz8"/>
+                            <constraint firstItem="T8Y-vn-P3T" firstAttribute="leading" secondItem="94S-7n-XaS" secondAttribute="leading" constant="20" id="RIg-pa-0cW"/>
+                            <constraint firstItem="Ifq-dV-Mhb" firstAttribute="top" secondItem="T8Y-vn-P3T" secondAttribute="bottom" constant="30" id="X2T-st-anU"/>
+                            <constraint firstItem="94S-7n-XaS" firstAttribute="trailing" secondItem="T8Y-vn-P3T" secondAttribute="trailing" constant="20" id="fSb-Ya-d8e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Segmentaion API" id="d9Z-FT-4dC"/>
+                    <connections>
+                        <outlet property="imageView" destination="T8Y-vn-P3T" id="gQ8-UP-XuI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Re-qO-FxO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-382.44274809160305" y="-22.535211267605636"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ll4-VV-UXh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GPK-OG-Ge5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jrV-az-WYV">
+                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T2T-HH-JBj" kind="relationship" relationship="rootViewController" id="ew6-S7-pLK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQi-Il-O9y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1309.1603053435115" y="-22.535211267605636"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="unsplashPlaceholder" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
