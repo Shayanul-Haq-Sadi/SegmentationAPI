@@ -208,7 +208,10 @@ class SegmentViewController: UIViewController {
     }
     
     private func exportImage(from view: UIView) -> UIImage? {
+        let bgcolor = view.backgroundColor
+        view.backgroundColor = .clear
         guard let imageData = view.asImage()?.pngData(), let image = UIImage(data: imageData) else { return  nil }
+        view.backgroundColor = bgcolor
         return image
     }
     
