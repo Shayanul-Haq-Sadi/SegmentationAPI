@@ -48,13 +48,11 @@ extension ImagePickerViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.isPicked = true
-            self.pickedImage = pickedImage
-            
-//            guard let fixedOrientationImage = pickedImage.fixedOrientation() else { return }
-
+            guard let fixedOrientationImage = pickedImage.fixedOrientation() else { return }
+            self.pickedImage = fixedOrientationImage
             
             DispatchQueue.main.async {
-                self.imageView.image = pickedImage
+                self.imageView.image = fixedOrientationImage
             }
             
         }
